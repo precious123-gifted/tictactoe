@@ -1,0 +1,62 @@
+@media only screen and (orientation: landscape) {
+  .dark {
+    border-radius: 1vw;
+    height: 9vw;
+    width: 9vw;
+    background-color: rgb(24, 3, 3);
+  }
+  .light {
+    border-radius: 1vw;
+    height: 9vw;
+    width: 9vw;
+    background-color: rgb(185, 141, 141);
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-content: center;
+    place-items: center;
+  }
+  body .winner-dashboard {
+    margin-bottom: 10%;
+  }
+  body .game-board {
+    border: 5px solid rgb(19, 2, 2);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-items: center;
+    width: 30vw;
+    height: 30vw;
+    background-color: brown;
+    border-radius: 0.7vw;
+  }
+  body .game-board .box {
+    border: 2px solid rgb(19, 2, 2);
+    display: grid;
+    place-content: center;
+    height: 9.7vw;
+    width: 9.7vw;
+  }
+}
+@media only screen and (orientation: portrait) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body .winner-dashboard {
+    margin-bottom: 30%;
+  }
+  body .game-board {
+    width: 90vw;
+    height: 90vw;
+    background-color: brown;
+    border-radius: 0.7vw;
+  }
+}/*# sourceMappingURL=style.css.map */
