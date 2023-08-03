@@ -18,25 +18,18 @@ boxArray.forEach((box,index)=>{box.id = index})
 let tileColor = 'dark'
 
 
-document.addEventListener('load',console.log(boxArray))
+ const insertTileIntoBox = (box) =>{
 
+    let tile = document.createElement('div')
+    tile.classList.add(tileColor === 'dark'? 'dark' : 'light')
 
- const functionToInsertATileIntoABox = (e) =>{
+    box.target.style.pointerEvents = 'none';
+    box.target.append(tile)
 
-     let tile = document.createElement('div')
-     tile.classList.add(tileColor === 'dark'? 'dark' : 'light')
+}
 
-     if(e.target.className === 'box'){
-        e.target.style.pointerEvents = 'none';
-       e.target.append(tile)
-  
-     }
-
-
-    
- }
- document.addEventListener('click', functionToInsertATileIntoABox)
-  
-
+Boxes.forEach((box)=>{
+box.addEventListener('click', insertTileIntoBox)    
+})
 
   
