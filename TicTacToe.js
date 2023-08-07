@@ -69,7 +69,7 @@ console.log(playerMoves)
 console.log('next-player:',nextPlayerToMove)
 console.log('last-player:',lastPlayerToMove)
 
- 
+ switchPlayersTurnOnceTimeRunsOut() 
 }
 const renderInsertPlayerTileIntoBox = Boxes.forEach((box)=>{
      
@@ -79,5 +79,23 @@ box.addEventListener('click',insertPlayerTileIntoBox)
 
 
 
+const switchPlayersTurnOnceTimeRunsOut = (box) =>{
 
+let lastPlayerToMove = playerMoves[playerMoves.length-1]
+
+setTimeout(() => {
+  if(lastPlayerToMove == playerOne){
+  
+    nextPlayerToMove = playerOne
+   
+    }
+    
+    else if(lastPlayerToMove == playerTwo){
+    
+      nextPlayerToMove = playerTwo
+     
+  
+    }
+  }, 3000);
+}
 
