@@ -30,11 +30,25 @@ display: grid;
 place-content: center;
 place-items: center;
 
-.winner-dashboard{
+.head{
+    display: grid;
+    place-items: center;
+
+ .winner-dashboard{
     margin-bottom: 10%;
     
-            }
-.game-board{
+            }   
+}
+
+
+.content{
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 130%;
+
+
+ .game-board{
     border: 5px solid rgb(19, 2, 2);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -54,7 +68,10 @@ height: 9.7vw;
 width: 9.7vw;
  }
 
+}   
 }
+
+
 }
 }
 

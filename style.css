@@ -19,10 +19,20 @@
     place-content: center;
     place-items: center;
   }
-  body .winner-dashboard {
+  body .head {
+    display: grid;
+    place-items: center;
+  }
+  body .head .winner-dashboard {
     margin-bottom: 10%;
   }
-  body .game-board {
+  body .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 130%;
+  }
+  body .content .game-board {
     border: 5px solid rgb(19, 2, 2);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -33,7 +43,7 @@
     background-color: brown;
     border-radius: 0.7vw;
   }
-  body .game-board .box {
+  body .content .game-board .box {
     border: 2px solid rgb(19, 2, 2);
     display: grid;
     place-content: center;
