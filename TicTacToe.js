@@ -23,14 +23,14 @@ boxArray.forEach((box,index)=>{box.id = index})
 let playerOne ={
     player:'player-one',
     tileColor:'light',
-    timeIn:true,
+    
     
 }
 
 let playerTwo ={
     player: 'player-two',
     tileColor:'dark',
-    timeIn:false,
+    
     
 }
 
@@ -69,7 +69,7 @@ console.log(playerMoves)
 console.log('next-player:',nextPlayerToMove)
 console.log('last-player:',lastPlayerToMove)
 
-
+ 
 }
 const renderInsertPlayerTileIntoBox = Boxes.forEach((box)=>{
      
