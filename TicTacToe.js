@@ -11,6 +11,7 @@
 
 
 let gameBoard = document.querySelector('.game-board')
+let winnersSignBoard = document.querySelector('.winners-signboard')
 let Boxes = document.querySelectorAll('.box')
 
 let boxArray = Array.from(Boxes)
@@ -63,7 +64,9 @@ console.log(playerMoves)
 console.log('next-player:',nextPlayerToMove)
 console.log('last-player:',lastPlayerToMove)
 
-let winningMoveChecker =  playerMoves.length >= 5? checkIfAPlayerHaswon() : isNaN
+
+winnersSignBoard.textContent = nextPlayerToMove == playerOne? 'Its Player One Turn' : nextPlayerToMove == playerTwo? 'Its Player Two Turn' : null
+let winningMoveChecker =  playerMoves.length >= 5? checkIfAPlayerHaswonOrTheGameIsATie() : isNaN
 
 
 
@@ -73,33 +76,54 @@ const renderInsertPlayerTileIntoBox = Boxes.forEach((box)=>{
 box.addEventListener('click',insertPlayerTileIntoBox)   
 })
 
-const checkIfAPlayerHaswon = () =>{
-//check all the combo array
-//if any of the combo array contains only a particular play then that particular player wins
- 
+
+const checkIfAPlayerHaswonOrTheGameIsATie = () =>{
+   
+
 winningMoves.forEach(moves => {
   
 let winner =  moves.every((index => boxArray[index].firstChild?.classList.contains('dark')) ) ? playerTwo : moves.every((index => boxArray[index].firstChild?.classList.contains('light')) ) ? playerOne : null
-
+let Draw = playerMoves.length == 9?!winner : null
  if(winner){
+boxArray.forEach(box=>{
+  box.style.pointerEvents = 'none'
+})
 
-  
-gameBoard.style.pointerEvents = 'none'
 
 
+winnersSignBoard.textContent = winner == playerOne? 'Player One Wins' : 'Player Two Wins'
 console.log('winner is:',winner)
- 
-
+console.log('player-moves:',playerMoves)
   return
  }
 
-
+  if(Draw){
+    winnersSignBoard.textContent = 'The Game is a Tie'
+   console.log('all boxes are filled up,the game is a tie')
+   return
+  }
 });
-
-  
-
 }
 
+const restartGame = () =>{
+let restartButton = document.querySelector('.resetButton')
+
+restartButton.addEventListener('click',()=>{
+
+  playerMoves.length=0
+  winnersSignBoard.textContent = 'Make Your Move Player One'
+  console.log('restart:',playerMoves)
+
+  boxArray.forEach(box=>{
+if(box.firstChild)
+    box.removeChild(box.firstChild)
+  box.style.pointerEvents = 'auto'
+  })
+
+})
+
+}
+restartGame()
 
 
 

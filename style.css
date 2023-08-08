@@ -20,16 +20,25 @@
     place-items: center;
   }
   body .head {
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    text-align: center;
   }
   body .head .winner-dashboard {
-    margin-bottom: 10%;
+    height: 55%;
+  }
+  body .head .timer {
+    height: 20%;
   }
   body .content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    height: 105%;
     width: 130%;
   }
   body .content .game-board {
@@ -50,8 +59,23 @@
     height: 9.7vw;
     width: 9.7vw;
   }
+  body .content .resetButton {
+    width: 10vw;
+  }
 }
 @media only screen and (orientation: portrait) {
+  .dark {
+    border-radius: 1.2vw;
+    height: 25vw;
+    width: 25vw;
+    background-color: rgb(24, 3, 3);
+  }
+  .light {
+    border-radius: 1.2vw;
+    height: 25vw;
+    width: 25vw;
+    background-color: rgb(185, 141, 141);
+  }
   body {
     width: 100vw;
     height: 100vh;
@@ -60,13 +84,47 @@
     flex-direction: column;
     align-items: center;
   }
-  body .winner-dashboard {
-    margin-bottom: 30%;
+  body .head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75vw;
+    text-align: center;
   }
-  body .game-board {
-    width: 90vw;
-    height: 90vw;
+  body .head .winner-dashboard {
+    height: 55%;
+  }
+  body .head .timer {
+    height: 20%;
+  }
+  body .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  body .content .game-board {
+    border: 5px solid rgb(19, 2, 2);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    place-items: center;
+    width: 80vw;
+    height: 80vw;
     background-color: brown;
     border-radius: 0.7vw;
+    margin-bottom: 5%;
+  }
+  body .content .game-board .box {
+    border: 2px solid rgb(19, 2, 2);
+    display: grid;
+    place-content: center;
+    height: 26vw;
+    width: 26vw;
+  }
+  body .content .resetButton {
+    width: 20vw;
   }
 }/*# sourceMappingURL=style.css.map */
