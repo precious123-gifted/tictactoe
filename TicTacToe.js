@@ -62,6 +62,8 @@ box.addEventListener('click',insertPlayerTileIntoBox)
 
 const checkIfAPlayerHaswonOrTheGameIsATie = () =>{
    
+
+
 winningMoves.forEach(moves => {
   
 let winner =  moves.every((index => boxArray[index].firstChild?.classList.contains('dark')) ) ? playerTwo : moves.every((index => boxArray[index].firstChild?.classList.contains('light')) ) ? playerOne : null
@@ -77,6 +79,8 @@ boxArray.forEach(box=>{
 winnersSignBoard.textContent = winner == playerOne? 'Player One Wins' : 'Player Two Wins'
   return
  }
+ console.log(playerMoves.length === 9?Draw : null)
+
    if(Draw){
      winnersSignBoard.textContent = 'The Game is a Tie'
     return
@@ -88,14 +92,14 @@ const restartGame = () =>{
 let restartButton = document.querySelector('.resetButton')
 
 restartButton.addEventListener('click',()=>{
-
-  playerMoves.length=0
-  winnersSignBoard.textContent = nextPlayerToMove == playerOne?'Make Your Move Player One':'Make Your Move Player Two'
+  winnerState = false;
+  playerMoves.length=0;
+  winnersSignBoard.textContent = nextPlayerToMove == playerOne?'Make Your Move Player One':'Make Your Move Player Two';
   
   boxArray.forEach(box=>{
 if(box.firstChild)
     box.removeChild(box.firstChild)
-  box.style.pointerEvents = 'auto'
+  box.style.pointerEvents = 'auto';
   })
 
 })
