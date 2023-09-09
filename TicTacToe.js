@@ -65,7 +65,7 @@ const checkIfAPlayerHaswonOrTheGameIsATie = () =>{
 winningMoves.forEach(moves => {
   
 let winner =  moves.every((index => boxArray[index].firstChild?.classList.contains('dark')) ) ? playerTwo : moves.every((index => boxArray[index].firstChild?.classList.contains('light')) ) ? playerOne : null
-// let Draw = (playerMoves.length === 9) && (winner !== playerOne || playerTwo?true:false);
+
 let Draw = (playerMoves.length === 9) &&  (winnerState === false? true : false);
  if(winner){
   winnerState = true
@@ -90,7 +90,7 @@ let restartButton = document.querySelector('.resetButton')
 restartButton.addEventListener('click',()=>{
 
   playerMoves.length=0
-  winnersSignBoard.textContent = 'Make Your Move Player One'
+  winnersSignBoard.textContent = nextPlayerToMove == playerOne?'Make Your Move Player One':'Make Your Move Player Two'
   
   boxArray.forEach(box=>{
 if(box.firstChild)
