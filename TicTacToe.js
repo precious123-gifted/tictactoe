@@ -31,6 +31,8 @@ const winningMoves = [
    [0,4,8],[2,4,6]
 ]
 
+let winnerState = false
+
 let nextPlayerToMove = playerMoves.length == 0?playerOne:$
 
 
@@ -63,8 +65,11 @@ const checkIfAPlayerHaswonOrTheGameIsATie = () =>{
 winningMoves.forEach(moves => {
   
 let winner =  moves.every((index => boxArray[index].firstChild?.classList.contains('dark')) ) ? playerTwo : moves.every((index => boxArray[index].firstChild?.classList.contains('light')) ) ? playerOne : null
-let Draw = (playerMoves.length === 9) && (winner !== playerOne || playerTwo?true:false);
+// let Draw = (playerMoves.length === 9) && (winner !== playerOne || playerTwo?true:false);
+let Draw = (playerMoves.length === 9) &&  (winnerState === false? true : false);
  if(winner){
+  winnerState = true
+
 boxArray.forEach(box=>{
   box.style.pointerEvents = 'none'
 })
@@ -72,11 +77,10 @@ boxArray.forEach(box=>{
 winnersSignBoard.textContent = winner == playerOne? 'Player One Wins' : 'Player Two Wins'
   return
  }
-
-  if(Draw){
-    winnersSignBoard.textContent = 'The Game is a Tie'
-   return
-  }
+   if(Draw){
+     winnersSignBoard.textContent = 'The Game is a Tie'
+    return
+   }
 });
 }
 
