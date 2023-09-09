@@ -1,17 +1,23 @@
 @media only screen and (orientation: landscape) {
   .dark {
-    border-radius: 1vw;
     height: 9vw;
     width: 9vw;
+    border-radius: 0.5vw;
+    background: linear-gradient(225deg, #221916, #bba8a0);
+    box-shadow: -2px 2px 5px #221916, 2px -2px 5px #867973;
     background-color: rgb(24, 3, 3);
   }
   .light {
-    border-radius: 1vw;
     height: 9vw;
     width: 9vw;
-    background-color: rgb(185, 141, 141);
+    border-radius: 0.5vw;
+    background: linear-gradient(225deg, #8f7468, #cdb4a9);
+    box-shadow: -2px 2px 5px #8a7972, 2px -2px 5px #f6d7ca;
+    background-color: #8f7468;
   }
   body {
+    background-image: url("./assets/table background.jpg");
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -30,6 +36,14 @@
   body .head .winner-dashboard {
     height: 55%;
   }
+  body .head .winner-dashboard .winners-signboard {
+    box-shadow: -5px -5px 6px #392e2a, 5px 5px 6px rgba(229, 186, 166, 0.7529411765);
+    display: flex;
+    justify-content: center;
+    color: #1b1119;
+    width: 80vw;
+    text-shadow: -5px -5px 6px #392e2a, 5px 5px 6px rgba(229, 186, 166, 0.7529411765);
+  }
   body .head .timer {
     height: 20%;
   }
@@ -41,24 +55,32 @@
     width: 130%;
   }
   body .content .game-board {
-    border: 5px solid rgb(19, 2, 2);
+    border: 5px solid #1b1119;
+    box-shadow: -7px -7px 8px #392e2a, 7px 7px 8px #e5baa6;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     place-items: center;
     width: 30vw;
     height: 30vw;
-    background-color: brown;
     border-radius: 0.7vw;
   }
   body .content .game-board .box {
     border: 2px solid rgb(19, 2, 2);
+    background: rgba(143, 116, 104, 0.1098039216);
+    box-shadow: inset -5px 5px 6px #392e2a, inset 5px -5px 6px #e5baa6;
+    cursor: grab;
     display: grid;
     place-content: center;
     height: 9.7vw;
     width: 9.7vw;
   }
   body .content .resetButton {
+    border-radius: 0.5vw;
+    background: linear-gradient(225deg, #221916, #bba8a0);
+    box-shadow: -2px 2px 5px #221916, 2px -2px 5px #867973;
+    color: antiquewhite;
+    cursor: grabbing;
     margin-top: 1%;
     width: 10vw;
   }
@@ -66,17 +88,23 @@
 @media only screen and (orientation: portrait) {
   .dark {
     border-radius: 1.2vw;
-    height: 25vw;
-    width: 25vw;
+    height: 24vw;
+    width: 24vw;
+    background: linear-gradient(225deg, #221916, #bba8a0);
+    box-shadow: -2px 2px 5px #221916, 2px -2px 5px #867973;
     background-color: rgb(24, 3, 3);
   }
   .light {
     border-radius: 1.2vw;
-    height: 25vw;
-    width: 25vw;
+    height: 24vw;
+    width: 24vw;
+    background: linear-gradient(225deg, #8f7468, #cdb4a9);
+    box-shadow: -2px 2px 5px #8a7972, 2px -2px 5px #f6d7ca;
     background-color: rgb(185, 141, 141);
   }
   body {
+    background-image: url("./assets/table background.jpg");
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -99,6 +127,9 @@
   body .head .winner-dashboard .winners-signboard {
     display: flex;
     justify-content: center;
+    box-shadow: -5px -5px 6px #392e2a, 5px 5px 6px rgba(229, 186, 166, 0.7529411765);
+    width: 80vw;
+    text-shadow: -5px -5px 6px #392e2a, 5px 5px 6px rgba(229, 186, 166, 0.7529411765);
   }
   body .head .timer {
     height: 20%;
@@ -112,18 +143,21 @@
   }
   body .content .game-board {
     border: 5px solid rgb(19, 2, 2);
+    box-shadow: -7px -7px 8px #392e2a, 7px 7px 8px #e5baa6;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     place-items: center;
     width: 80vw;
     height: 80vw;
-    background-color: brown;
     border-radius: 0.7vw;
     margin-bottom: 5%;
   }
   body .content .game-board .box {
     border: 2px solid rgb(19, 2, 2);
+    background: rgba(143, 116, 104, 0.1098039216);
+    box-shadow: inset -5px 5px 6px #392e2a, inset 5px -5px 6px #e5baa6;
+    cursor: grab;
     display: grid;
     place-content: center;
     height: 26vw;
@@ -131,5 +165,9 @@
   }
   body .content .resetButton {
     width: 20vw;
+    background: linear-gradient(225deg, #221916, #bba8a0);
+    box-shadow: -2px 2px 5px #221916, 2px -2px 5px #867973;
+    color: antiquewhite;
+    cursor: grabbing;
   }
 }/*# sourceMappingURL=style.css.map */

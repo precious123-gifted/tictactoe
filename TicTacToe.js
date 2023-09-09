@@ -79,7 +79,6 @@ boxArray.forEach(box=>{
 winnersSignBoard.textContent = winner == playerOne? 'Player One Wins' : 'Player Two Wins'
   return
  }
- console.log(playerMoves.length === 9?Draw : null)
 
    if(Draw){
      winnersSignBoard.textContent = 'The Game is a Tie'
