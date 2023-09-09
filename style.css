@@ -15,17 +15,17 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    display: grid;
-    place-content: center;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   body .head {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 15vw;
     text-align: center;
+    margin-bottom: 1%;
   }
   body .head .winner-dashboard {
     height: 55%;
@@ -38,7 +38,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 105%;
     width: 130%;
   }
   body .content .game-board {
@@ -60,6 +59,7 @@
     width: 9.7vw;
   }
   body .content .resetButton {
+    margin-top: 1%;
     width: 10vw;
   }
 }
